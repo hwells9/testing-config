@@ -8,5 +8,5 @@ spring:
         instance-connection-name: inventory-dev-project:us-east1:product-service
   datasource:
     initialization-mode: always
-    username: hi
+    username: test
     password: test
