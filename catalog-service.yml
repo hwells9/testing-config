@@ -1,12 +1,1 @@
-spring:
-  application:
-    name: catalog-service  # Service registers under this name
-  cloud:
-    gcp:
-      sql:
-        database-name: products
-        instance-connection-name: inventory-dev-project:us-east1:product-service
-  datasource:
-    initialization-mode: always
-    username: test
-    password: test
+something: somethingisme
