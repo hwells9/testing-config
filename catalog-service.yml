@@ -1,17 +1,41 @@
 spring:
   application:
-    name: catalog-service
+    name: catalog-service  # Service registers under this name
+  profiles:
+    active: default
   cloud:
-    config: 
-      uri: http://localhost:8888/
-  datasource:
-    username: test
-    password: test
-#     password: {cipher}{key:projects/$/locations/KEY_LOCATION_ID/keyRings/KEY_RING_ID/cryptoKeys/CRYPTO_KEY_ID}CiQArAA6WLrpvxbNCz4tbzsP6Lvk2ruW0E+t2XcNIHdVCB6lJMcSLQDF5IaFGt8Qx1yxC27QjvFMdB/aJIKNrE7/mwXqdMIfMkpFkadbcnv/MH3OSA==
+    gcp:
+      logging:
+        enabled: true
 management:
   endpoints:
     web:
       exposure:
-        include: refresh
+        include: "*"
+
+#logbook:
+#  include:
+#    - /**
+#  filter.enabled: true
+#  format.style: http
+#  write:
+#    category: http.wire-log
+#    level: INFO
+
+
+eureka:
+  instance:
+    leaseRenewalIntervalInSeconds: 30
+    hostname: catalog-service-dot-inventory-dev-project.appspot.com
+    secure-port: 443
+    non-secure-port-enabled: true
+    non-secure-port: 80
+    health-check-url: https://catalog-service-dot-inventory-dev-project.appspot.com/actuator/health
+
+
+  client:
+    service-url:
+      defaultZone: http://discovery-service-dot-inventory-dev-project.appspot.com/eureka
+      
 dbusername: test
 db_password: test
