@@ -5,7 +5,7 @@ spring:
     config: 
       uri: http://localhost:8888/
   datasource:
-    username: test
+    username: testingstuff
     password: {cipher}{key:projects/$/locations/KEY_LOCATION_ID/keyRings/KEY_RING_ID/cryptoKeys/CRYPTO_KEY_ID}CiQArAA6WLrpvxbNCz4tbzsP6Lvk2ruW0E+t2XcNIHdVCB6lJMcSLQDF5IaFGt8Qx1yxC27QjvFMdB/aJIKNrE7/mwXqdMIfMkpFkadbcnv/MH3OSA==
 management:
   endpoints:
