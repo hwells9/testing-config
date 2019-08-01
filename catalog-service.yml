@@ -4,6 +4,9 @@ spring:
   cloud:
     config: 
       uri: http://localhost:8888
+  datasource:
+    username: test
+    password: {cipher}CiQArAA6WLrpvxbNCz4tbzsP6Lvk2ruW0E+t2XcNIHdVCB6lJMcSLQDF5IaFGt8Qx1yxC27QjvFMdB/aJIKNrE7/mwXqdMIfMkpFkadbcnv/MH3OSA==
 management:
   endpoints:
     web:
