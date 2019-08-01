@@ -1,41 +1,12 @@
 spring:
   application:
     name: catalog-service  # Service registers under this name
-  profiles:
-    active: default
   cloud:
     gcp:
-      logging:
-        enabled: true
-management:
-  endpoints:
-    web:
-      exposure:
-        include: "*"
-
-#logbook:
-#  include:
-#    - /**
-#  filter.enabled: true
-#  format.style: http
-#  write:
-#    category: http.wire-log
-#    level: INFO
-
-
-eureka:
-  instance:
-    leaseRenewalIntervalInSeconds: 30
-    hostname: catalog-service-dot-inventory-dev-project.appspot.com
-    secure-port: 443
-    non-secure-port-enabled: true
-    non-secure-port: 80
-    health-check-url: https://catalog-service-dot-inventory-dev-project.appspot.com/actuator/health
-
-
-  client:
-    service-url:
-      defaultZone: http://discovery-service-dot-inventory-dev-project.appspot.com/eureka
-      
-dbusername: test
-db_password: test
+      sql:
+        database-name: products
+        instance-connection-name: inventory-dev-project:us-east1:product-service
+  datasource:
+    initialization-mode: always
+    username: test
+    password: test
